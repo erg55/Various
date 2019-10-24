@@ -1,4 +1,4 @@
- My prexisting version of SPaDES (3.12.0) is here /home/CAM/egordon/spades/SPAdes-3.12.0-Linux/bin/spades.py which is a linux version that was installed ready to go but it turns out that it can't be adjusted. We need compile the source code ourselves if we want to adjust k-mer sizes so I will make a new directory and install the most current version of SPAdes there, via downloading with **wget** and unzipping the contents with **tar**.
+ My prexisting version of SPaDES (3.12.0) is here /home/CAM/egordon/spades/SPAdes-3.12.0-Linux/bin/spades.py which is a linux version that was installed ready to go but it turns out that it can't be adjusted. We need to compile the source code ourselves if we want to adjust k-mer sizes so I will make a new directory and install the most current version of SPAdes there, via downloading with **wget** and unzipping the contents with **tar**.
  
  
 ```
@@ -13,7 +13,7 @@ Edit the cmake line of spades_compile file to look like this to allow maximum k-
 ```
 cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$PREFIX" -DSPADES_MAX_K=251 $* "$BASEDIR/src"
  ```
-Next we  actually compile the source code. You may need to install some various programs like gcc. 
+Next we need to actually compile the source code. You may need to install some various programs like gcc. 
  
 ```
  ./spades_compile.sh
@@ -28,7 +28,7 @@ nano ~/SPADESkmer/SPAdes-3.13.1/src/spades_pipeline/options_storage.py
  ### CLUSTER complications
  You may get an error regarding gcc when running  ./spades_compile.sh
  
- Module unloading gcc and loading more current gcc doesnt work because it is using the default location in the /usr/bin folder. So let's find where the active module is using **whereiss**
+Module unloading gcc and loading more current gcc doesnt work because it is using the default location in the /usr/bin folder. So let's find where the active module is using **whereiss**
 
  ```
 whereis gcc
@@ -46,7 +46,7 @@ And that should work! Though make sure and load the the same version of gcc befo
 
 
 
-NOTE: You must feed merged reads as single reads (e.g., -s as one combined files) and not provide single reads separately or SPAdes will tell you that the max read length is too short for assemblies over 150 bases. 
+NOTE: You must also feed merged reads as single reads (e.g., -s as one combined files) and not provide single reads separately or SPAdes will tell you that the max read length is too short for assemblies over 150 bases. 
 
 
 
