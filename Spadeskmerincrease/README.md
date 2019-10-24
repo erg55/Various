@@ -14,10 +14,10 @@
 ```
  ./spades_compile.sh
  ```
- nano ~/SPADESkmer/SPAdes-3.13.1/src/spades_pipeline/options_storage.py
+  find MAX_K parameter on line 45 and change to 256 
 ```
- find MAX_K on line 45 and chnage to 256
- ```
+nano ~/SPADESkmer/SPAdes-3.13.1/src/spades_pipeline/options_storage.py
+```
  
  
  ### CLUSTER complications
