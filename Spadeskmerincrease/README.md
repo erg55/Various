@@ -12,7 +12,7 @@
  Next we compile the source code with this command to allow maximum k-mer size to be adjusted up. You may need to install some various programs like gcc. 
  
 ```
- ./spades_compile.sh -DSPADES_MAX_K 254
+ ./spades_compile.sh
  ```
  nano ~/SPADESkmer/SPAdes-3.13.1/src/spades_pipeline/options_storage.py
 ```
@@ -36,13 +36,13 @@ export CC=/isg/shared/apps/gcc/6.4.0/bin/gcc
  ```
 
 
-And that should work! 
+And that should work! Though make sure and load the the same version of gcc before running SPAdes otherwise it will fail. 
 
 
 
- -DSPADES_MAX_K option and lift the checks in spades.py and around
-  SPAdes using -DSPADES_MAX_K option, and then changed the 'MAX_K' value in the 'options_storage.py' file accordingly.
-  MAX_K constant in spades_pipeline/options_storage.py
+
+NOTE: Information of compiling spades with -DSPADES_MAX_K option and lift the checks in spades.py did not work
+
 
 
 
