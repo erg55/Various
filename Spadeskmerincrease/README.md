@@ -19,21 +19,28 @@
  find MAX_K on line 45 and chnage to 256
  ```
  
- get an error when running  ./spades_compile.sh
  
- so unload gcc and load gcc more modern
+ ### CLUSTER complication
+ You should get an error regarding gcc when running  ./spades_compile.sh
  
+ Module unloading gcc and loading more current gcc doesnt work
  
- 
+ Have to find where gcc is on the cluster using
+ ```
+whereis gcc
+ ```
+
+The current versions are in isg/shared/apps/ 
+So add one line in compiler_spades.py before cmake line
+ ```
+export CC=/isg/shared/apps/gcc/6.4.0/bin/gcc
+ ```
+
+
+And that should work. 
  -DSPADES_MAX_K option and lift the checks in spades.py and around
   SPAdes using -DSPADES_MAX_K option, and then changed the 'MAX_K' value in the 'options_storage.py' file accordingly.
   MAX_K constant in spades_pipeline/options_storage.py
 
 
-whereis gcc
-Default is 
-/lib/gcc/
 
-
-/bin/gcc
-/bin/g++
