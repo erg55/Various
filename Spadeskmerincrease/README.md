@@ -8,8 +8,12 @@
  tar -xzf SPAdes-3.13.1.tar.gz
  cd SPAdes-3.13.1
 ```
- 
- Next we compile the source code with this command to allow maximum k-mer size to be adjusted up. You may need to install some various programs like gcc. 
+
+Edit the cmake line of spades_compile file to look like this to allow maximum k-mer size to be adjusted up
+```
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$PREFIX" -DSPADES_MAX_K=251 $* "$BASEDIR/src"
+ ```
+Next we  actually compile the source code. You may need to install some various programs like gcc. 
  
 ```
  ./spades_compile.sh
