@@ -18,7 +18,8 @@ Next we  actually compile the source code. You may need to install some various 
 ```
  ./spades_compile.sh
  ```
-  find MAX_K parameter on line 45 and change to 256 
+  You have to edit a line in options_storage.py either before or after compiling.
+  Find MAX_K parameter on line 45 and change to 256 
 ```
 nano ~/SPADESkmer/SPAdes-3.13.1/src/spades_pipeline/options_storage.py
 ```
@@ -45,7 +46,7 @@ And that should work! Though make sure and load the the same version of gcc befo
 
 
 
-NOTE: Information of compiling spades with -DSPADES_MAX_K option and lift the checks in spades.py did not work
+NOTE: You must feed merged reads as single reads (e.g., -s as one combined files) and not provide single reads separately or SPAdes will tell you that the max read length is too short for assemblies over 150 bases. 
 
 
 
