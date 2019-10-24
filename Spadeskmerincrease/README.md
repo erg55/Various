@@ -1,4 +1,4 @@
- My prexisting version of SPaDES (3.12.0) is here /home/CAM/egordon/spades/SPAdes-3.12.0-Linux/bin/spades.py which is a linux version that was installed ready to go but it turns out that it can't be adjusted. We need compile the source code ourselves if we want to adjust k-mer sizes so I will make a new directory and install the most current version of SPAdes there, via downloading with *wget* and unzipping the contents with *tar*.
+ My prexisting version of SPaDES (3.12.0) is here /home/CAM/egordon/spades/SPAdes-3.12.0-Linux/bin/spades.py which is a linux version that was installed ready to go but it turns out that it can't be adjusted. We need compile the source code ourselves if we want to adjust k-mer sizes so I will make a new directory and install the most current version of SPAdes there, via downloading with **wget** and unzipping the contents with **tar**.
  
  
 ```
