@@ -1,4 +1,4 @@
- My prexisting version of SPaDES (3.12.0) is here /home/CAM/egordon/spades/SPAdes-3.12.0-Linux/bin/spades.py which is a linux version that was installed ready to go but it turns out that it can't be adjusted. We need to compile the source code ourselves if we want to adjust k-mer sizes so I will make a new directory and install the most current version of SPAdes there, via downloading with **wget** and unzipping the contents with **tar**.
+My prexisting version of SPaDES (3.12.0) is a linux version that was easy to install but it turns out that it can't be adjusted. We need to compile the source code ourselves if we want to adjust k-mer sizes so I will make a new directory and install the most current version of SPAdes (3.13.1) there, via downloading with **wget** and unzipping the contents with **tar**.
  
  
 ```
@@ -9,17 +9,17 @@
  cd SPAdes-3.13.1
 ```
 
-Edit the cmake line of spades_compile file to look like this to allow maximum k-mer size to be adjusted up
+Edit the cmake line of spades_compile file to look like this to allow maximum k-mer size to be adjusted up. If doing this on a cluster you may need to add another line here. 
 ```
 cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$PREFIX" -DSPADES_MAX_K=251 $* "$BASEDIR/src"
  ```
-Next we need to actually compile the source code. You may need to install some various programs like gcc. 
+Next we need to actually compile the source code. You may need to install some programs like gcc. 
  
 ```
  ./spades_compile.sh
  ```
-  You have to edit a line in options_storage.py either before or after compiling.
-  Find MAX_K parameter on line 45 and change to 256 
+  You have to edit a line in options_storage.py after compiling.
+  Find MAX_K parameter on line 45 and change the value to 256 
 ```
 nano ~/SPADESkmer/SPAdes-3.13.1/src/spades_pipeline/options_storage.py
 ```
@@ -41,7 +41,7 @@ export CC=/isg/shared/apps/gcc/6.4.0/bin/gcc
  ```
 
 
-And that should work! Though make sure and load the the same version of gcc before running SPAdes otherwise it will fail. 
+And that should work! Though make sure and module load the up to date version of gcc before running SPAdes otherwise it will fail. 
 
 
 
