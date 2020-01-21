@@ -48,6 +48,12 @@ And that should work! Though make sure and module load the up to date version of
 
 NOTE: You must also feed merged reads as single reads (e.g., -s as one combined files) and not provide single reads separately or SPAdes will tell you that the max read length is too short for assemblies over 150 bases. 
 
+Also remember to get the correct verions of gcc when running a script. 
+ ```
+module unload gcc 
+module unload gcc
+module load gcc/6.4.0
 
+ ```
 
 
