@@ -16,7 +16,20 @@ Lastly, I removed the stem node state as advised by Liam Revell [here](https://g
 ![Screenshot](https://github.com/erg55/Various/blob/master/ASRwithmissingdata/removestem.png?raw=true)
 
 
-I was finally able to import the parsimony mapped simmap file into R using 
-'''
+I was finally able to import the parsimony-mapped adulterated simmap file into R using 
+```
 simmap <- read.simmap("char5simmapmod.txt",format="nexus", version=1.5)
-'''
+```
+
+I made the new character state I assigned to the missing data nodes (2 in this case) gray. 
+```
+cols <- c("2" = "gray", "0" = "black", "1" = "red")
+```
+and plotted the ladderized tree
+
+```
+lsimmap <- ladderize.simmap(simmap)
+plotSimmap(lsimmap, colors=cols)
+```
+
+
