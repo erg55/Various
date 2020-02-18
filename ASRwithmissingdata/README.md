@@ -1,4 +1,4 @@
-Documenting my efforts to export ASR with missing data from mesquite into R for modern plotting. 
+Documenting my efforts to export ASR with missing data from mesquite into R for modern plotting. Mesquite will only export discrete characters unfortunately. 
 
 With a tree with a traced character open, select trace and "Export Ancestral States Trace" > SIMMAP 1.5 Format
 
