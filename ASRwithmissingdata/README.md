@@ -6,7 +6,7 @@ With a tree with a traced character open, select trace and "Export Ancestral Sta
 ![Screenshot](https://github.com/erg55/Various/blob/master/ASRwithmissingdata/Screen%20Shot%202020-02-18%20at%2011.53.36%20AM.png?raw=true)
 
 
-Now, if you have any missing data unforntately Mesquite does not assign any character state for those tips nor any node containing only missing data. We can fix this problem by searching for any ":" in the Nexus tree file not followed by a [&map={#}]. I used TextWrangler to assign a new character state to this missing data nodes. 
+Now, if you have any missing data unforntately Mesquite does not assign any character state for those tips nor any node containing only missing data. We can fix this problem by searching for any ":" in the Nexus tree file not followed by a [&map={#}]. I used TextWrangler to assign a new character state (2 since this was a binary character) to missing data nodes. 
 
 ![Screenshot](https://github.com/erg55/Various/blob/master/ASRwithmissingdata/Screen%20Shot%202020-02-18%20at%2012.11.18%20PM.png?raw=true)
 
@@ -28,8 +28,10 @@ cols <- c("2" = "gray", "0" = "black", "1" = "red")
 and plotted the ladderized tree
 
 ```
-lsimmap <- ladderize.simmap(simmap)
-plotSimmap(lsimmap, colors=cols)
+lsimmap <- ladderize.simmap(simmap, right=F)
+plotSimmap(lsimmap, colors=cols, fsize = 0.37, ftype = "bi", lwd =1.75, direction ="upwards", offset=0.5, asp=150, mar=c(0.0,0.0,0.0,0.0))
 ```
+
+
 
 
