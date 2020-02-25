@@ -1,6 +1,6 @@
 Documenting my efforts to export ASR with missing data from mesquite into R for modern plotting.
 
-****Discrete characters****
+***Discrete characters***
 
 Mesquite will only export discrete characters unfortunately. 
 
@@ -132,7 +132,7 @@ Ok and do some final adjustment in a graphic program.
 
 
 
-****Continuous characters****
+***Continuous characters***
 
 Mesquite offers no way to export a contiunous character ancestral state reconstruction. Many R programs are incompatabile with missing data. The only work around I've found for visualizing these character is with using the program [phylopars](https://github.com/ericgoolsby/Rphylopars/wiki/Example-2:-Missing-Data-Imputation-and-Ancestral-State-Reconstruction). 
 ```
