@@ -160,7 +160,7 @@ p_BM <- phylopars(svlall, tree1)
 ##rerooting with one terminal and correct branch lengths
 tree2 <- ladderize(root(tree1, outgroup=which(tree1$tip.label == "Pasiropsis_sp_*"), edgelabel = T, resolve.root = T, direction="upwards"), right =F)
 ```
-This again creates a colorblind friendly rainbow paltte for plotting
+This again creates a colorblind friendly rainbow palette for plotting
 ```
 altcolcolor <- colorRampPalette(colorblindcols)
 ```
@@ -176,5 +176,9 @@ dev.off()
 
 
 
+![Screenshot](https://github.com/erg55/Various/blob/master/ASRwithmissingdata/contchar.png?raw=true)
+
 Hooray, we have modern looking plots! 
+
+Some adjustment again before the final is done. 
 
