@@ -136,12 +136,35 @@ Ok and do some final adjustment in a graphic program.
 **Continuous characters**
 
 Mesquite offers no way to export a contiunous character ancestral state reconstruction. Many R programs are incompatabile with missing data. The only work around I've found for visualizing these character is with using the program [phylopars](https://github.com/ericgoolsby/Rphylopars/wiki/Example-2:-Missing-Data-Imputation-and-Ancestral-State-Reconstruction). 
+
+Read in files
+
+```
+tree1 <- read.tree("UCE_Ericoperon_noCOI_v2_RAxML_Partitioned_bipartitions (2).reconciled_tree")
+svlall<-read.csv("Triatominaecontcharactersforfig.csv")
+svlmiss<-read.csv("missingdatacontinuoustaxa.txt")
+
+```
+Fancy renaming function for taxa with missing data
+
+```
+svlall$species <- as.character(svlall$species)
+missing <- svlall$species %in% as.character(svlmiss[[1]])
+svlall$species[missing] <- paste0(svlall$species[missing], "_*")
+tree1$tip.label <- svlall$species
 ```
 
 ```
-
-
-```
-
+plotTree(tree1,fsize=0.8,ftype="i")
+p_BM <- phylopars(svlall, tree1)
+##rerooting with one terminal and correct branch lengths
+tree2 <- ladderize(root(tree1, outgroup=which(tree1$tip.label == "Pasiropsis_sp_*"), edgelabel = T, resolve.root = T, direction="upwards"), right =F)
+altcolcolor <- colorRampPalette(colorblindcols)
+par(mfrow=c(4,1), mai=c(0.0,0.0,0.0,0.0))
+testplot <- plotBranchbyTrait(tree2,p_BM$anc_recon[1:176,1], mode="tips", direction ="upwards", x.lim=c(-9.56,176.00), y.lim=c(0,1), cex =0.40, align.tip.label=TRUE, mar=c(0.0,0.0,0.0,0.0), palette = altcolcolor, prompt=T, edge.width=1.75, label.offset=0.025, legend = 50, title = "head width:head length")
+testplot <- plotBranchbyTrait(tree2,p_BM$anc_recon[1:176,2], mode="tips", direction ="upwards", x.lim=c(-9.56,176.00), y.lim=c(0,1), cex =0.40, align.tip.label=TRUE, mar=c(0.0,0.0,0.0,0.0), palette = altcolor, prompt=T, edge.width=1.75, label.offset=0.025, legend = 50, title = "postocular length:anteocular length")
+testplot <- plotBranchbyTrait(tree2,p_BM$anc_recon[1:176,3], mode="tips", direction ="upwards", x.lim=c(-9.56,176.00), y.lim=c(0,1), cex =0.40, align.tip.label=TRUE, palette = altcolor, prompt=T, edge.width=1.75, label.offset=0.025, legend = 50, title = "abdomen width:total length (male)")
+testplot <- plotBranchbyTrait(tree2,p_BM$anc_recon[1:176,4], mode="tips", direction ="upwards", x.lim=c(-9.56,176.00), y.lim=c(0,1), cex =0.40, align.tip.label=TRUE, palette = altcolor, prompt=T, edge.width=1.75, label.offset=0.025, legend = 50, title = "body length")
+dev.off()
 ```
 
