@@ -60,7 +60,7 @@ It has 7 states plus missing data so you can see some colorblind friendly values
 ```
 plot(inlmisc::GetColors(7, scheme = "bright"))
 ```
-I used these colors to define the states fo rthe next plot. 
+I used these colors to define the states for the next plot. 
 
 ```
 cols9 <- c("9" = "#BBBBBB", "0" = "black", "1" = "#EE6677", "2" = "#CCBB44", "3" = "#AA3377", "4" = "#228833", "5" = "#66CCEE","6" = "#4477AA")
@@ -135,7 +135,7 @@ Ok and do some final adjustment in a graphic program.
 
 **Continuous characters**
 
-Mesquite offers no way to export a contiunous character ancestral state reconstruction. Many R programs are incompatabile with missing data. The only work around I've found for visualizing these character is with using the program [phylopars](https://github.com/ericgoolsby/Rphylopars/wiki/Example-2:-Missing-Data-Imputation-and-Ancestral-State-Reconstruction). 
+Mesquite offers no way to export a continuous character ancestral state reconstruction. Many R programs are incompatible with missing data. The only work around I've found for visualizing these character is with using the program [phylopars](https://github.com/ericgoolsby/Rphylopars/wiki/Example-2:-Missing-Data-Imputation-and-Ancestral-State-Reconstruction). 
 
 Read in files
 
