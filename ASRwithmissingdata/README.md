@@ -1,5 +1,7 @@
 Documenting my efforts to export ASR with missing data from mesquite into R for modern plotting.
-#####Discrete characters
+
+****Discrete characters****
+
 Mesquite will only export discrete characters unfortunately. 
 
 With a tree with a traced character open, select trace and "Export Ancestral States Trace" > SIMMAP 1.5 Format
@@ -126,11 +128,11 @@ text(x=-16.5*par()$usr[1],  y=-7.5*par()$usr[3], labels="Coloration", cex= 1)
 
 Ok and do some final adjustment in a graphic program. 
 
-![Screenshot](https://github.com/erg55/Various/blob/master/ASRwithmissingdata/final.png?raw=true)
+![Screenshot](https://github.com/erg55/Various/blob/master/ASRwithmissingdata/mirrorphylo.png?raw=true)
 
 
 
-#####Continuous characters
+****Continuous characters****
 
 Mesquite offers no way to export a contiunous character ancestral state reconstruction. Many R programs are incompatabile with missing data. The only work around I've found for visualizing these character is with using the program [phylopars](https://github.com/ericgoolsby/Rphylopars/wiki/Example-2:-Missing-Data-Imputation-and-Ancestral-State-Reconstruction). 
 ```
