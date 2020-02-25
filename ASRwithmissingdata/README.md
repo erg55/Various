@@ -71,7 +71,7 @@ Ok now to plot both trees. Split up the plotting area into two columns
 par(mfrow=c(1,2), mai=c(0.0,0.0,0.0,0.0))
 ```
 
-Plot the first tree rightwards with a legend ...adjusted using the plot parameters
+Plot the first tree rightwards with a legend ...adjusted using the plot parameters to find a good place for it.....we also offset the tips to look closer to what we want in the end. 
 
 ```
 plotSimmap(lsimmap, colors=cols, fsize = 0.37, ftype = "bi", lwd =1.75, offset=5.5, mar=c(0.0,0.0,0.0,0.0))
@@ -82,10 +82,13 @@ add.simmap.legend(leg=c("unknown","absent","present"), colors=cols, shape="circl
 ![Screenshot](https://github.com/erg55/Various/blob/master/ASRwithmissingdata/testtreecharacter9next.png?raw=true)
 
 
+Ok now add the second tree with all the character states. 
 
-
+```
+plotSimmap(lsimmap9, colors=cols9, fsize = 0.37, ftype = "bi", lwd =1.75, direction ="leftwards", offset=3.5, mar=c(0.0,0.0,0.0,0.0))
+add.simmap.legend(leg=c("unknown","uniformly dark","with large contrasting patches","mottled","uniformly pale","dark with small pale marks","suffused","white bands associated with veins on dark background"), prompt=F, x=-0.75*par()$usr[1], y=-6.5*par()$usr[3], colors=cols9, shape="circle")
 
 ```
 
-```
+![Screenshot](https://github.com/erg55/Various/blob/master/ASRwithmissingdata/testtreecharacterboth.png?raw=true)
 
