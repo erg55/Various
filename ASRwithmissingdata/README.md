@@ -35,7 +35,7 @@ Then add a legend
 ```
 add.simmap.legend(leg=c("unknown","absent","present"), colors=cols, shape="circle", x=60, y=-6.5*par()$usr[3], prompt=F, size=1, align.tip.label=TRUE)
 ```
-!Screenshot(https://github.com/erg55/Various/blob/master/ASRwithmissingdata/testtreecharacterx.png)
+!Screenshot(https://github.com/erg55/Various/blob/master/ASRwithmissingdata/testtreecharacterx.png?raw=true)
 
 Looks ok...lets see you wanted to do a complicated cophylogeny thing to plot two characters at once. 
 
@@ -63,7 +63,7 @@ cols9 <- c("9" = "#BBBBBB", "0" = "black", "1" = "#EE6677", "2" = "#CCBB44", "3"
 
 Now finally we can plot it .
 
-!Screenshot(https://github.com/erg55/Various/blob/master/ASRwithmissingdata/testtreecharacter9.png)
+!Screenshot(https://github.com/erg55/Various/blob/master/ASRwithmissingdata/testtreecharacter9.png?raw=true)
 
 
 Ok now to plot both trees. Split up the plotting area into two columns
@@ -79,7 +79,7 @@ add.simmap.legend(leg=c("unknown","absent","present"), colors=cols, shape="circl
 
 ```
 
-!Screenshot(https://github.com/erg55/Various/blob/master/ASRwithmissingdata/testtreecharacter9next.png)
+!Screenshot(https://github.com/erg55/Various/blob/master/ASRwithmissingdata/testtreecharacter9next.png?raw=true)
 
 
 
