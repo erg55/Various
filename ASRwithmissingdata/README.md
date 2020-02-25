@@ -1,7 +1,7 @@
 Documenting my efforts to export ASR with missing data from mesquite into R for modern plotting.
-##Discrete characters##
 
-**Discrete characters**
+
+## Discrete characters
 
 Mesquite will only export discrete characters unfortunately. 
 
