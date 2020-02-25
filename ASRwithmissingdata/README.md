@@ -159,7 +159,13 @@ plotTree(tree1,fsize=0.8,ftype="i")
 p_BM <- phylopars(svlall, tree1)
 ##rerooting with one terminal and correct branch lengths
 tree2 <- ladderize(root(tree1, outgroup=which(tree1$tip.label == "Pasiropsis_sp_*"), edgelabel = T, resolve.root = T, direction="upwards"), right =F)
+```
+This again creates a colorblind friendly rainbow paltte for plotting
+```
 altcolcolor <- colorRampPalette(colorblindcols)
+```
+Now plot all four phylogenies
+```
 par(mfrow=c(4,1), mai=c(0.0,0.0,0.0,0.0))
 testplot <- plotBranchbyTrait(tree2,p_BM$anc_recon[1:176,1], mode="tips", direction ="upwards", x.lim=c(-9.56,176.00), y.lim=c(0,1), cex =0.40, align.tip.label=TRUE, mar=c(0.0,0.0,0.0,0.0), palette = altcolcolor, prompt=T, edge.width=1.75, label.offset=0.025, legend = 50, title = "head width:head length")
 testplot <- plotBranchbyTrait(tree2,p_BM$anc_recon[1:176,2], mode="tips", direction ="upwards", x.lim=c(-9.56,176.00), y.lim=c(0,1), cex =0.40, align.tip.label=TRUE, mar=c(0.0,0.0,0.0,0.0), palette = altcolor, prompt=T, edge.width=1.75, label.offset=0.025, legend = 50, title = "postocular length:anteocular length")
@@ -167,4 +173,8 @@ testplot <- plotBranchbyTrait(tree2,p_BM$anc_recon[1:176,3], mode="tips", direct
 testplot <- plotBranchbyTrait(tree2,p_BM$anc_recon[1:176,4], mode="tips", direction ="upwards", x.lim=c(-9.56,176.00), y.lim=c(0,1), cex =0.40, align.tip.label=TRUE, palette = altcolor, prompt=T, edge.width=1.75, label.offset=0.025, legend = 50, title = "body length")
 dev.off()
 ```
+
+
+
+Hooray, we have modern looking plots! 
 
